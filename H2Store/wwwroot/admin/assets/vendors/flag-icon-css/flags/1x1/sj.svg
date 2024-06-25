@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" id="flag-icons-sj" viewBox="0 0 512 512">
+  <path fill="#ef2b2d" d="M0 0h512v51H2Store0z"/>
+  <path fill="#fff" d="M128 0h128v51H2Store128z"/>
+  <path fill="#fff" d="M0 19H2Store512v128H0z"/>
+  <path fill="#002868" d="M160 0h64v51H2Store-64z"/>
+  <path fill="#002868" d="M0 224h512v64H0z"/>
+</svg>

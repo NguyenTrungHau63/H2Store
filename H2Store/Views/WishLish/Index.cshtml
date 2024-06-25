@@ -1,0 +1,47 @@
+﻿@model IEnumerable<H2Store.Models.ProductLike>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_LayoutProduct.cshtml";
+}
+
+<div class="text-center">
+    <h1 class="text-uppercase">Wish Lish</h1>
+</div>
+<div>
+	<table class="table-shopping-cart">
+		<tr class="table_head">
+			<th class="column-1">Product</th>
+			<th class="column-2"></th>
+			<th class="column-3">Price</th>
+			<th class="column-5"></th>
+		</tr>
+		@foreach (var item in Model)
+		{
+			<tr class="table_row">
+				<td class="column-1">
+					<div class="how-itemcart1">
+						<img src="~/images/@item.Product.ImageUrl" alt="IMG">
+					</div>
+				</td>
+				<td class="column-2">@item.Product.Name</td>
+				<td class="column-3">@String.Format("{0:N0} VND", item.Product.Price)</td>
+				<td class="column-3">
+					<a asp-action="RemoveWishLish" asp-controller="WishLish" asp-route-id="@item.ProductId" class="text-dark me-3 mt-auto" title="Remove item" style="border-radius:30px; justify-content:center">
+						<svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-x-circle" viewBox="0 0 16 16">
+							<path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16" />
+							<path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708" />
+						</svg>
+					</a>
+					<a asp-action="Detail" asp-controller="Product" asp-route-id="@item.ProductId" class="text-dark ms-5 mt-auto" title="Add to cart" style="border-radius:30px">
+						<svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-basket2" viewBox="0 0 16 16">
+							<path d="M4 10a1 1 0 0 1 2 0v2a1 1 0 0 1-2 0zm3 0a1 1 0 0 1 2 0v2a1 1 0 0 1-2 0zm3 0a1 1 0 1 1 2 0v2a1 1 0 0 1-2 0z" />
+							<path d="M5.757 1.071a.5.5 0 0 1 .172.686L3.383 6h9.234L10.07 1.757a.5.5 0 1 1 .858-.514L13.783 6H15.5a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-.623l-1.844 6.456a.75.75 0 0 1-.722.544H3.69a.75.75 0 0 1-.722-.544L1.123 8H.5a.5.5 0 0 1-.5-.5v-1A.5.5 0 0 1 .5 6h1.717L5.07 1.243a.5.5 0 0 1 .686-.172zM2.163 8l1.714 6h8.246l1.714-6z" />
+						</svg>
+					</a>
+				</td>
+				
+			</tr>
+		}
+	</table>
+</div>
+
